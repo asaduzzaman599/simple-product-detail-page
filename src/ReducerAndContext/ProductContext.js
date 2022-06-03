@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useReducer } from 'react';
+import productReducer, { initialState } from './productReducer';
 
-const ProductContext = () => {
+export const ContextProduct = React.createContext()
+
+const ProductContext = ({ children }) => {
+    const [state, dispatch] = useReducer(productReducer, initialState);
+    console.log(dispatch)
     return (
-        <div>
-
-        </div>
+        <ContextProduct.Provider value={[state, dispatch]}>
+            {children}
+        </ContextProduct.Provider>
     );
 };
 

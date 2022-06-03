@@ -1,10 +1,10 @@
-const initialState = { product: null, sku: null };
+export const initialState = { gallery: [], product: null, sku: null };
 
-function productReducer(state, action) {
+const productReducer = (state, action) => {
     switch (action.type) {
         case 'load':
-
-            return;
+            console.log(action.payload)
+            return { product: action.payload }
         case 'increment':
             return { count: state.count + 1 };
         case 'decrement':
