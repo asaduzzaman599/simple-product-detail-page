@@ -1,5 +1,3 @@
-import React, { useContext } from 'react';
-import { ContextProduct } from '../../ReducerAndContext/ProductContext';
 import ProductColor from './ProductColor';
 
 const ProductColors = ({ state }) => {
