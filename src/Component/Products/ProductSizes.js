@@ -3,7 +3,7 @@ import ProductSize from './ProductSize';
 
 const ProductSizes = ({ state }) => {
     const skuSize = state?.sizes?.find(size => size?.id === state?.selectedSku?.props[1])
-    console.log(skuSize)
+
     return (
         <div className='px-4 py-2 bg-white mt-6'>
             <h3 className='text-gray-500 font-medium text-xl'>Size: <span className='text-black'> {skuSize?.name}</span></h3>

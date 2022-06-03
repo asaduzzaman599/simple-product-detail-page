@@ -11,7 +11,7 @@ const ProductDetail = () => {
 
     useEffect(() => {
         axiosBase.get('/').then(({ data }) => {
-
+            console.log(data)
             dispatch({ type: 'load', payload: data })
         })
     }, [])

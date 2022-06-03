@@ -25,7 +25,7 @@ const productReducer = (state, action) => {
         case 'color':
             //checking selected color and update the selected sku
             const color = action?.payload
-            console.log(color)
+
             sku = state.skus.find(singleSku => singleSku?.props[0] === color && singleSku?.props[1] === state?.selectedSku?.props[1])
 
             return { ...state, selectedSku: sku };

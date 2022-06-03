@@ -10,7 +10,6 @@ function App() {
     <ProductContext>
       <div className="App max-h-screen mx-auto">
         <ProductDetail></ProductDetail>
-
       </div>
     </ProductContext>
   );
