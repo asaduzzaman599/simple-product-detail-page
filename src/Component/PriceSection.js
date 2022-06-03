@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PriceSection = ({ state }) => {
-    console.log(state)
+
     const discountedPrice = state?.selectedSku?.price?.discounted || 0
     const oldPrice = state?.selectedSku?.price?.old || 0
     return (

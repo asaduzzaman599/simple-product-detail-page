@@ -25,11 +25,14 @@ const productReducer = (state, action) => {
         case 'color':
             //checking selected color and update the selected sku
             const color = action?.payload
-            sku = state.skus.find(singleSku => singleSku.props[0] === color && singleSku.props[1] === state.selectedSku.props[1])
+            console.log(color)
+            sku = state.skus.find(singleSku => singleSku?.props[0] === color && singleSku?.props[1] === state?.selectedSku?.props[1])
+
             return { ...state, selectedSku: sku };
 
         case 'size':
             const size = action?.payload
+
             sku = state.skus.find(singleSku => singleSku.props[1] === size && singleSku.props[0] === state.selectedSku.props[0])
             return { ...state, selectedSku: sku };
         default:

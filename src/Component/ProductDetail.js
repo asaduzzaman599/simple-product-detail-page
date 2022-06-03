@@ -11,7 +11,7 @@ const ProductDetail = () => {
 
     useEffect(() => {
         axiosBase.get('/').then(({ data }) => {
-            console.log(data)
+
             dispatch({ type: 'load', payload: data })
         })
     }, [])
@@ -21,8 +21,8 @@ const ProductDetail = () => {
             <TopBreadcrumbs />
 
             <div className=' lg:flex h-full bg-[#D9D9D9] h-full gap-10'>
-                <Gallery />
-                <ProductInfo />
+                <Gallery state={state} />
+                <ProductInfo state={state} />
             </div>
         </div>
     );

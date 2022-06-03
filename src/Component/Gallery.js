@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { ContextProduct } from '../ReducerAndContext/ProductContext';
 
-const Gallery = () => {
-    const [state] = useContext(ContextProduct)
-    console.log(state)
+const Gallery = ({ state }) => {
+
     return (
         <div className='grid sm:grid-cols-1 md:grid-cols-2 flex-1'>
             {
