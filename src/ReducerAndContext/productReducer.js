@@ -1,14 +1,34 @@
-export const initialState = { gallery: [], product: null, sku: null };
+export const initialState = {
+    gallery: [], product: null,
+    skus: [],
+    colors: [],
+    sizes: [],
+    selectedSku: null
+};
 
 const productReducer = (state, action) => {
+    let sku;
     switch (action.type) {
         case 'load':
             console.log(action.payload)
-            return { product: action.payload }
-        case 'increment':
-            return { count: state.count + 1 };
-        case 'decrement':
-            return { count: state.count - 1 };
+            const product = action?.payload
+            return {
+                gallery: product?.gallery,
+                skus: product?.variation?.skus,
+                colors: product?.variation?.props[0]?.values,
+                sizes: product?.variation?.props[1]?.values,
+                selectedSku: product?.variation?.skus[0]
+            }
+        case 'color':
+            //checking selected color and update the selected sku
+            const color = action?.payload
+            sku = state.skus.find(singleSku => singleSku.props[0] === color && singleSku.props[1] === state.selectedSku.props[1])
+            return { ...state, selectedSku: sku };
+
+        case 'size':
+            const size = action?.payload
+            sku = state.skus.find(singleSku => singleSku.props[1] === size && singleSku.props[0] === state.selectedSku.props[0])
+            return { ...state, selectedSku: sku };
         default:
             throw new Error();
     }

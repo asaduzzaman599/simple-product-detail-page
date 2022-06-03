@@ -3,15 +3,17 @@ import { axiosBase } from '../api/api';
 import { ContextProduct } from '../ReducerAndContext/ProductContext';
 
 const ProductDetail = () => {
-    const value = useContext(ContextProduct)
+    const [state, dispatch] = useContext(ContextProduct)
 
-    const [state, dispatch] = value
+
     useEffect(() => {
         axiosBase.get('/').then(({ data }) => {
             console.log(data)
             dispatch({ type: 'load', payload: data })
         })
     }, [])
+
+    console.log(state)
     return (
         <div>
 
