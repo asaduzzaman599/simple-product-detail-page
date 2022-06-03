@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { axiosBase } from '../api/api';
 import { ContextProduct } from '../ReducerAndContext/ProductContext';
+import Gallery from './Gallery';
+import ProductInfo from './ProductInfo';
 import TopBreadcrumbs from './TopBreadcrumbs';
 
 const ProductDetail = () => {
@@ -14,10 +16,14 @@ const ProductDetail = () => {
         })
     }, [])
 
-    console.log(state)
     return (
-        <div className=''>
-            <TopBreadcrumbs></TopBreadcrumbs>
+        <div className='min-h-screen'>
+            <TopBreadcrumbs />
+
+            <div className=' lg:flex h-full bg-[#D9D9D9] h-full gap-10'>
+                <Gallery />
+                <ProductInfo />
+            </div>
         </div>
     );
 };

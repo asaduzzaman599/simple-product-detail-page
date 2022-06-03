@@ -10,7 +10,7 @@ function App() {
 
   return (
     <ProductContext>
-      <div className="App">
+      <div className="App max-h-screen">
         <ProductDetail></ProductDetail>
 
       </div>

@@ -1,9 +1,11 @@
 export const initialState = {
-    gallery: [], product: null,
+    productInfo: null,
+    gallery: [],
     skus: [],
     colors: [],
     sizes: [],
-    selectedSku: null
+    selectedSku: null,
+    title: ''
 };
 
 const productReducer = (state, action) => {
@@ -12,11 +14,13 @@ const productReducer = (state, action) => {
         case 'load':
             const product = action?.payload
             return {
+                productInfo: product,
                 gallery: product?.gallery,
                 skus: product?.variation?.skus,
                 colors: product?.variation?.props[0]?.values,
                 sizes: product?.variation?.props[1]?.values,
-                selectedSku: product?.variation?.skus[0]
+                selectedSku: product?.variation?.skus[0],
+                title: product?.title
             }
         case 'color':
             //checking selected color and update the selected sku
