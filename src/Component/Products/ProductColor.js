@@ -9,7 +9,7 @@ const ProductColor = ({ product }) => {
     console.log(product)
 
     return (
-        <div onClick={() => dispatch({ type: 'color', payload: productColor })} className={`p-4 border-2  cursor-pointer hover:shadow-lg ${color === product?.id ? 'border-orange-200 ' : 'border-gray-200'}`} >
+        <div onClick={() => dispatch({ type: 'color', payload: productColor })} className={`p-2 border-2  cursor-pointer hover:shadow-lg ${color === product?.id ? 'border-orange-200 ' : 'border-gray-200'}`} >
             <img src={product?.thumb} alt="" />
         </div>
     );

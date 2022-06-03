@@ -20,7 +20,7 @@ const ProductDetail = () => {
         <div className='min-h-screen'>
             <TopBreadcrumbs />
 
-            <div className=' lg:flex h-full bg-[#D9D9D9] h-full gap-10'>
+            <div className=' lg:flex h-full bg-[#D9D9D9] h-full gap-6'>
                 <Gallery state={state} />
                 <ProductInfo state={state} />
             </div>
