@@ -10,7 +10,6 @@ const productReducer = (state, action) => {
     let sku;
     switch (action.type) {
         case 'load':
-            console.log(action.payload)
             const product = action?.payload
             return {
                 gallery: product?.gallery,

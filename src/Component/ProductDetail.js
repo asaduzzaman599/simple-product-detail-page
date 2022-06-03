@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { axiosBase } from '../api/api';
 import { ContextProduct } from '../ReducerAndContext/ProductContext';
+import TopBreadcrumbs from './TopBreadcrumbs';
 
 const ProductDetail = () => {
     const [state, dispatch] = useContext(ContextProduct)
@@ -15,8 +16,8 @@ const ProductDetail = () => {
 
     console.log(state)
     return (
-        <div>
-
+        <div className=''>
+            <TopBreadcrumbs></TopBreadcrumbs>
         </div>
     );
 };
