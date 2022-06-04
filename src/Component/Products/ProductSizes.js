@@ -14,8 +14,8 @@ const ProductSizes = ({ state }) => {
             <div className='flex items-center justify-between'>
                 <h3 className='text-gray-500 font-medium text-xl'>Size: <span className='text-black'> {skuSize?.name}</span></h3>
                 {isTabOpen
-                    ? <ChevronUpIcon onClick={() => setIsTabOpen(false)} className="h-5 w-5 text-gray-500" />
-                    : <ChevronDownIcon onClick={() => setIsTabOpen(true)} className="h-5 w-5 text-gray-500" />}
+                    ? <ChevronUpIcon onClick={() => setIsTabOpen(false)} className="h-5 w-5 text-gray-500 cursor-pointer hover:bg-gray-200 rounded-full" />
+                    : <ChevronDownIcon onClick={() => setIsTabOpen(true)} className="h-5 w-5 text-gray-500 cursor-pointer  cursor-pointer hover:bg-gray-200 rounded-full" />}
             </div>
 
             <div className={`grid grid-cols-5 gap-4 mt-4 ${isTabOpen ? 'block' : 'hidden'}`}>
